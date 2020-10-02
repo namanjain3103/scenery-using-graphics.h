@@ -1,0 +1,293 @@
+#include<graphics.h>
+#include<conio.h>
+
+main()
+{
+
+   int gd = DETECT, gm;
+   initgraph(&gd, &gm, " ");
+
+ //frame
+setcolor(GREEN);
+  int frame[]={0,0,0,744,1365,744,1365,0,0,0};
+   drawpoly(5,frame);
+
+//sky
+setcolor(CYAN);
+ int sky[] = {0,0,0,200,1365,200,1365,0,0,0};
+   drawpoly(5,sky);
+   setfillstyle(SOLID_FILL,CYAN);
+   fillpoly(5,sky);
+
+//mountains
+setcolor(BROWN);
+
+ int m1[] = {0,200,200,50,400,200,0,200};
+   drawpoly(4,m1);
+   setfillstyle(SOLID_FILL,BROWN);
+   fillpoly(4,m1);
+ int m2[] = {400,200,600,50,800,200,400,200};
+   drawpoly(4,m2);
+   setfillstyle(SOLID_FILL,BROWN);
+   fillpoly(4,m2);
+int m3[] = {800,200,1000,50,1200,200,800,200};
+  drawpoly(4,m3);
+  setfillstyle(SOLID_FILL,BROWN);
+  fillpoly(4,m3);
+int m4[] = {1200,200,1400,50,1400,200,1200,200};
+  drawpoly(4,m4);
+  setfillstyle(SOLID_FILL,BROWN);
+  fillpoly(4,m4);
+
+//land
+setcolor(GREEN);
+ int land[] = {0,200,0,744,1365,744,1365,200,0,200};
+   drawpoly(5,land);
+   setfillstyle(SOLID_FILL,GREEN);
+   fillpoly(5,land);
+
+//river
+setcolor(BLUE);
+ int river[] = {0,230,0,390,1365,300,1365,210,0,230};
+   drawpoly(5,river);
+   setfillstyle(9,BLUE);
+   fillpoly(5,river);
+
+
+//hut
+setcolor(LIGHTRED);
+ int top[] = {670,400,745,305,820,400,670,400};
+    drawpoly(4,top);
+    setfillstyle(XHATCH_FILL,RED);
+    fillpoly(4,top);
+ int shed[] = {745,305,820,400,1070,400,995,305,745,305};
+    drawpoly(5,shed);
+    setfillstyle(XHATCH_FILL,RED);
+    fillpoly(5,shed);
+setcolor(LIGHTRED);
+    rectangle(670,400,820,600);
+    setfillstyle(SOLID_FILL,YELLOW);
+    floodfill(671,431,LIGHTRED);
+
+    rectangle(820,400,1070,600);
+    setfillstyle(SOLID_FILL,YELLOW);
+    floodfill(821,431,LIGHTRED);
+setcolor(RED);
+    rectangle(710,490,780,600);
+    setfillstyle(XHATCH_FILL,RED);
+    floodfill(711,501,RED);
+
+    rectangle(875,460,1010,560);
+    setfillstyle(XHATCH_FILL,RED);
+    floodfill(876,491,RED);
+setcolor(RED);
+    line(943,460,943,560);
+    line(875,510,1010,510);
+
+//path
+setcolor(6);
+    setfillstyle(SOLID_FILL,6);
+    arc(720,600,-80,0,60);
+    arc(650,600,-80,0,60);
+    line(710,600,780,600);
+    line(670,655,750,655);
+    floodfill(712,620,6);
+
+//front road
+setcolor(8);
+ int road[] = {670,655,560,744,760,744,740,655,670,655};
+    drawpoly(5,road);
+    setfillstyle(SOLID_FILL,8);
+    fillpoly(5,road);
+
+//sun
+setcolor(LIGHTRED);
+    setfillstyle(SOLID_FILL,LIGHTRED);
+    circle(800,90,75);
+    floodfill(800,90,LIGHTRED);
+setcolor(YELLOW);
+    circle(800,90,65);
+    setfillstyle(SOLID_FILL,YELLOW);
+    floodfill(800,90,YELLOW);
+
+ //right side tree
+setcolor(BROWN);
+ int trunk[] = {1290,620,1290,740,1310,740,1310,620,1290,620};
+    drawpoly(5,trunk);
+    setfillstyle(SOLID_FILL,BROWN);
+    fillpoly(5,trunk);
+setcolor(LIGHTGREEN);
+ int b1[] = {1250,520,1300,440,1350,520,1250,520};
+    drawpoly(4,b1);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b1);
+ int b2[] = {1250,570,1300,490,1350,570,1250,570};
+    drawpoly(4,b2);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b2);
+ int b3[] = {1250,620,1300,540,1350,620,1250,620};
+    drawpoly(4,b3);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b3);
+
+ //rightside tree
+setcolor(BROWN);
+  int trunk2[] = {1120,500,1120,600,1140,600,1140,500,1120,500};
+    drawpoly(5,trunk2);
+    setfillstyle(SOLID_FILL,BROWN);
+    fillpoly(5,trunk2);
+setcolor(LIGHTGREEN);
+  int b11[] = {1080,400,1130,320,1180,400,1080,400};
+    drawpoly(4,b11);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b11);
+  int b12[] = {1080,450,1130,370,1180,450,1080,450};
+    drawpoly(4,b12);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b12);
+  int b13[] = {1080,500,1130,420,1180,500,1080,500};
+    drawpoly(4,b13);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,b13);
+
+  //grass unser the tree
+ setcolor(LIGHTGREEN);
+   int t = 1100;
+   while(t<=1156)
+   {
+
+    int tgrass[] = {t,600,t+2,586,t+4,600,t,600};
+    drawpoly(4,tgrass);
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
+    fillpoly(4,tgrass);
+    t += 4;
+    }
+
+//clouds
+setcolor(WHITE);
+  int c = 0;
+  while(c<=800)
+   {
+    setfillstyle(SOLID_FILL,WHITE);
+    ellipse(c+370,50,20,300,30,30);
+    ellipse(c+396,40,345,165,30,30);
+    ellipse(c+430,45,280,140,32,28);
+    ellipse(c+430,59,200,80,30,24);
+    ellipse(c+397,66,163,340,31,30);
+    floodfill(c+385,42,WHITE);
+    c+=800;
+   }
+  // centre cloud
+   c = 330;
+   while(c<=700)
+  {
+   setfillstyle(SOLID_FILL,WHITE);
+   ellipse(c+370,50,20,300,30,30);
+   ellipse(c+396,40,345,165,30,30);
+   ellipse(c+430,45,280,140,32,28);
+   ellipse(c+430,59,200,80,30,24);
+   ellipse(c+397,66,163,340,31,30);
+   floodfill(c+385,42,WHITE);
+   c+=700;
+  }
+
+//birds
+setcolor(BLACK);
+  arc(660,60,0,120,20);
+  arc(698,60,60,180,20);
+
+  arc(860,60,0,120,20);
+  arc(898,60,60,180,20);
+
+  arc(920,60,0,120,20);
+  arc(958,60,60,180,20);
+
+//leftside road
+setcolor(8);
+  int road2[] = {0,585,580,610,740,655,740,785,510,690,0,665,0,585};
+    drawpoly(7,road2);
+    setfillstyle(SOLID_FILL,8);
+    fillpoly(7,road2);
+
+ //............................... sports car..............................
+
+ int base[] = {150,550,150,610,350,610,350,550,150,550};
+   drawpoly(5,base) ;//white
+   setfillstyle(SOLID_FILL,WHITE);
+   fillpoly(5,base);
+ int topbase[] = {70,570,78,560,150,550,435,550,429,570,70,570};
+   drawpoly(6,topbase);//yellow
+   setfillstyle(SOLID_FILL,YELLOW);
+   fillpoly(6,topbase);
+ int bottombase[] = {70,570,80,582,150,610,350,610,429,570,70,570};
+   drawpoly(6,bottombase);//red
+   setfillstyle(SOLID_FILL,RED);
+   fillpoly(6,bottombase);
+setcolor(BLACK);
+ int toproof[] = {185,550,285,515,355,515,435,550,185,550};
+   drawpoly(5,toproof);//red
+   setfillstyle(SOLID_FILL,RED);
+   fillpoly(5,toproof);
+ int door[]={205,595,315,595,315,570,330,550,330,520,285,520,205,550,205,595};
+   drawpoly(8,door);//red
+   setfillstyle(SOLID_FILL,RED);
+   fillpoly(8,door);
+ int handl[] = {310,570,300,570,300,566,310,566,310,570};
+   drawpoly(5,handl);//white or cyan
+   setfillstyle(SOLID_FILL,YELLOW);
+   fillpoly(5,handl);
+ int bottomroof[] = {205,550,285,520,330,520,435,550,205,550};
+   drawpoly(5,bottomroof);//white or cyan
+   setfillstyle(SOLID_FILL,CYAN);
+   fillpoly(5,bottomroof);
+ int glass[] = {330,550,330,520,435,550,330,550};
+   drawpoly(4,glass);// light gray
+   setfillstyle(SOLID_FILL,LIGHTGRAY);
+   fillpoly(4,glass);
+
+ //wheel
+     //left
+ setcolor(BLACK);
+  circle(150,590,30);//black
+    setfillstyle(SOLID_FILL,BLACK);
+    floodfill(150,590,BLACK);
+setcolor(YELLOW);
+  circle(150,590,15);//white or light gray
+    setfillstyle(SOLID_FILL,RED);
+    floodfill(150,590,YELLOW);
+ //right
+setcolor(BLACK);
+ circle(350,590,30);//black
+   setfillstyle(SOLID_FILL,BLACK);
+   floodfill(350,590,BLACK);
+setcolor(YELLOW);
+ circle(350,590,15);// white or light gray
+   setfillstyle(SOLID_FILL,RED);
+   floodfill(350,590,YELLOW);
+
+//grass
+setcolor(LIGHTGREEN);
+  int i = 0;
+  while(i<560)
+   {
+     int grass[] = {i,744,i +3,720,i+6,744,i,744};
+     drawpoly(4,grass);
+     setfillstyle(SOLID_FILL,LIGHTGREEN);
+     fillpoly(4,grass);
+     i += 6;
+   }
+setcolor(LIGHTGREEN);
+  i = 760;
+  while(i<1365)
+   {
+     int grass2[] = {i,744,i +3,720,i+6,744,i,744};
+     drawpoly(4,grass2);
+     setfillstyle(SOLID_FILL,LIGHTGREEN);
+     fillpoly(4,grass2);
+     i += 6;
+   }
+
+
+getch();
+closegraph();
+}
